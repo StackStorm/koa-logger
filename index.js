@@ -41,9 +41,9 @@ function dev(opts) {
   return function logger(ctx, next) {
     // request
     const start = new Date;
-    console.log('  ' + chalk.gray('<--')
+    console.log('  ' + chalk.dim('<--')
       + ' ' + chalk.bold('%s')
-      + ' ' + chalk.gray('%s'),
+      + ' ' + chalk.dim('%s'),
         ctx.method,
         ctx.originalUrl);
 
@@ -112,14 +112,14 @@ function log(ctx, start, len, err, event) {
 
   const upstream = err ? chalk.red('xxx')
     : event === 'close' ? chalk.yellow('-x-')
-    : chalk.gray('-->')
+    : chalk.dim('-->')
 
   console.log('  ' + upstream
     + ' ' + chalk.bold('%s')
-    + ' ' + chalk.gray('%s')
+    + ' ' + chalk.dim('%s')
     + ' ' + chalk[color]('%s')
-    + ' ' + chalk.gray('%s')
-    + ' ' + chalk.gray('%s'),
+    + ' ' + chalk.dim('%s')
+    + ' ' + chalk.dim('%s'),
       ctx.method,
       ctx.originalUrl,
       status,

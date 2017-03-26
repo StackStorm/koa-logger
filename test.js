@@ -35,9 +35,9 @@ describe('koa-logger', function() {
 
   it('should log a request with correct method and url', function(done) {
     request(app.listen()).head('/200').expect(200, function() {
-      expect(log).to.have.been.calledWith('  ' + chalk.gray('<--')
+      expect(log).to.have.been.calledWith('  ' + chalk.dim('<--')
         + ' ' + chalk.bold('%s')
-        + ' ' + chalk.gray('%s'),
+        + ' ' + chalk.dim('%s'),
           'HEAD',
           '/200');
       done();
@@ -53,12 +53,12 @@ describe('koa-logger', function() {
 
   it('should log a 200 response', function(done) {
     request(app.listen()).get('/200').expect(200, function() {
-      expect(log).to.have.been.calledWith('  ' + chalk.gray('-->')
+      expect(log).to.have.been.calledWith('  ' + chalk.dim('-->')
         + ' ' + chalk.bold('%s')
-        + ' ' + chalk.gray('%s')
+        + ' ' + chalk.dim('%s')
         + ' ' + chalk.green('%s')
-        + ' ' + chalk.gray('%s')
-        + ' ' + chalk.gray('%s'),
+        + ' ' + chalk.dim('%s')
+        + ' ' + chalk.dim('%s'),
           'GET',
           '/200',
           200,
@@ -70,12 +70,12 @@ describe('koa-logger', function() {
 
   it('should log a 301 response', function(done) {
     request(app.listen()).get('/301').expect(301, function() {
-      expect(log).to.have.been.calledWith('  ' + chalk.gray('-->')
+      expect(log).to.have.been.calledWith('  ' + chalk.dim('-->')
         + ' ' + chalk.bold('%s')
-        + ' ' + chalk.gray('%s')
+        + ' ' + chalk.dim('%s')
         + ' ' + chalk.cyan('%s')
-        + ' ' + chalk.gray('%s')
-        + ' ' + chalk.gray('%s'),
+        + ' ' + chalk.dim('%s')
+        + ' ' + chalk.dim('%s'),
           'GET',
           '/301',
           301,
@@ -87,12 +87,12 @@ describe('koa-logger', function() {
 
   it('should log a 304 response', function(done) {
     request(app.listen()).get('/304').expect(304, function() {
-      expect(log).to.have.been.calledWith('  ' + chalk.gray('-->')
+      expect(log).to.have.been.calledWith('  ' + chalk.dim('-->')
         + ' ' + chalk.bold('%s')
-        + ' ' + chalk.gray('%s')
+        + ' ' + chalk.dim('%s')
         + ' ' + chalk.cyan('%s')
-        + ' ' + chalk.gray('%s')
-        + ' ' + chalk.gray('%s'),
+        + ' ' + chalk.dim('%s')
+        + ' ' + chalk.dim('%s'),
           'GET',
           '/304',
           304,
@@ -104,12 +104,12 @@ describe('koa-logger', function() {
 
   it('should log a 404 response', function(done) {
     request(app.listen()).get('/404').expect(404, function() {
-      expect(log).to.have.been.calledWith('  ' + chalk.gray('-->')
+      expect(log).to.have.been.calledWith('  ' + chalk.dim('-->')
         + ' ' + chalk.bold('%s')
-        + ' ' + chalk.gray('%s')
+        + ' ' + chalk.dim('%s')
         + ' ' + chalk.yellow('%s')
-        + ' ' + chalk.gray('%s')
-        + ' ' + chalk.gray('%s'),
+        + ' ' + chalk.dim('%s')
+        + ' ' + chalk.dim('%s'),
           'GET',
           '/404',
           404,
@@ -121,12 +121,12 @@ describe('koa-logger', function() {
 
   it('should log a 500 response', function(done) {
     request(app.listen()).get('/500').expect(500, function() {
-      expect(log).to.have.been.calledWith('  ' + chalk.gray('-->')
+      expect(log).to.have.been.calledWith('  ' + chalk.dim('-->')
         + ' ' + chalk.bold('%s')
-        + ' ' + chalk.gray('%s')
+        + ' ' + chalk.dim('%s')
         + ' ' + chalk.red('%s')
-        + ' ' + chalk.gray('%s')
-        + ' ' + chalk.gray('%s'),
+        + ' ' + chalk.dim('%s')
+        + ' ' + chalk.dim('%s'),
           'GET',
           '/500',
           500,
@@ -140,10 +140,10 @@ describe('koa-logger', function() {
     request(app.listen()).get('/error').expect(500, function() {
       expect(log).to.have.been.calledWith('  ' + chalk.red('xxx')
         + ' ' + chalk.bold('%s')
-        + ' ' + chalk.gray('%s')
+        + ' ' + chalk.dim('%s')
         + ' ' + chalk.red('%s')
-        + ' ' + chalk.gray('%s')
-        + ' ' + chalk.gray('%s'),
+        + ' ' + chalk.dim('%s')
+        + ' ' + chalk.dim('%s'),
           'GET',
           '/error',
           500,
