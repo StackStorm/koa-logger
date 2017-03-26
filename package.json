@@ -1,7 +1,10 @@
 {
-  "name": "koa-logger",
+  "name": "@stackstorm/koa-logger",
   "description": "Logging middleware for koa",
-  "repository": "koajs/logger",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stackstorm/koa-logger.git"
+  },
   "version": "2.0.1",
   "keywords": [
     "koa",
